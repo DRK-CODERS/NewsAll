@@ -1,11 +1,11 @@
 package com.example.newsall;
 
 import android.content.Context;
-import android.telecom.Call;
 import android.widget.Toast;
 
 import com.example.newsall.Models.NewsApiResponse;
 
+import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
@@ -54,7 +54,7 @@ public class RequestManager {
 
     public interface CallNewsApi {
         @GET("top-headlines")
-        Call<NewsApiResponse> callHeadlines(
+        retrofit2.Call<NewsApiResponse> callHeadlines(
                 @Query("country") String country,
                 @Query("category") String category,
                 @Query("q") String query,
